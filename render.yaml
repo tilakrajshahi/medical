@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: medical-diagnostics
+    runtime: node
+    plan: free
+    buildCommand: ./render-build.sh
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.16.0

@@ -1,5 +1,5 @@
 // Backend API URL (Change this to your live server URL after deployment)
-const BASE_URL = ''; // Leave empty for local development, e.g., 'https://medical-server.onrender.com'
+const BASE_URL = 'https://medical-3hk8.onrender.com'; // Live server URL
 
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle

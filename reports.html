@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reports - Sagarmatha Diagnostics Centre</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="Sagarmatha Diagnostics Logo" class="logo-img">
+                    Sagarmatha<span>Diagnostics</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Tests & Services</a></li>
+                    <li><a href="booking.html">Book Test</a></li>
+                    <li><a href="reports.html" class="active">Reports</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1>Patient Reports</h1>
+            <p>Download or view your diagnostic reports online.</p>
+        </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section class="reports-section section-padding">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-form-wrapper">
+                    <div class="form-header text-center">
+                        <h2>Access Your Reports</h2>
+                        <p>Enter your Patient ID or Registered Phone Number.</p>
+                    </div>
+                    <form id="report-form">
+                        <div class="form-group">
+                            <label for="patient-id">Patient ID / Phone Number</label>
+                            <input type="text" id="patient-id" name="patient-id" required
+                                placeholder="Ex: PT-12345 or 9876543210">
+                        </div>
+                        <button type="submit" class="btn btn-block">View Report</button>
+                    </form>
+
+                    <!-- Demo Result -->
+                    <div id="report-result"
+                        style="display: none; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+                        <div class="report-card"
+                            style="background: #f8f9fa; padding: 20px; border-radius: 5px; border-left: 5px solid var(--accent-color);">
+                            <h4><i class="fas fa-file-medical-alt" style="color: var(--primary-color);"></i> Lab Report
+                                - #PT-12345</h4>
+                            <p style="margin: 5px 0;"><strong>Patient:</strong> John Doe</p>
+                            <p style="margin: 5px 0;"><strong>Date:</strong> 2026-02-09</p>
+                            <p style="margin: 10px 0; color: green;"><i class="fas fa-check-circle"></i> Report Ready
+                            </p>
+                            <div style="margin-top: 15px;">
+                                <a href="#" class="btn" style="padding: 5px 15px; font-size: 0.9rem;"><i
+                                        class="fas fa-download"></i> Download PDF</a>
+                                <a href="#" class="btn btn-secondary" style="padding: 5px 15px; font-size: 0.9rem;"><i
+                                        class="fas fa-eye"></i> View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">Sagarmatha<span>Diagnostics</span></div>
+                    <p>Providing accurate diagnostic services with state-of-the-art technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="booking.html">Book Appointment</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Bharatpur 7, Chitwan</li>
+                        <li><i class="fas fa-phone"></i> 056-535550, 9767219822, 9844454846</li>
+                        <li><i class="fas fa-envelope"></i> Sdclab2024@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://wa.me/9779767219822" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/18CgiUwKW3/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Sagarmatha Diagnostics Centre. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

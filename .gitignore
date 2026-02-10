@@ -1,0 +1,5 @@
+node_modules
+uploads
+lab.db
+.env
+.DS_Store

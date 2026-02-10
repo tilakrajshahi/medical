@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Sagarmatha Diagnostics Centre</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="Sagarmatha Diagnostics Logo" class="logo-img">
+                    Sagarmatha<span>Diagnostics</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Tests & Services</a></li>
+                    <li><a href="booking.html" class="active">Book Test</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1>Book an Appointment</h1>
+            <p>Schedule your test online and skip the queue.</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section section-padding">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-form-wrapper">
+                    <div class="form-header text-center">
+                        <h2>Appointment Form</h2>
+                        <p>Fill in the details below to book your slot.</p>
+                    </div>
+                    <form id="booking-form">
+                        <div class="form-group">
+                            <label for="name">Patient Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Enter phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="test-type">Test Type</label>
+                            <select id="test-type" name="test-type" required>
+                                <option value="" disabled selected>Select a test</option>
+                                <option value="blood">Blood Test</option>
+                                <option value="urine">Urine Test</option>
+                                <option value="pathology">Pathology</option>
+                                <option value="biochemistry">Biochemistry</option>
+                                <option value="hormone">Hormone Test</option>
+
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferred Time</label>
+                                <input type="time" id="time" name="time" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Notes (Optional)</label>
+                            <textarea id="message" name="message" rows="3"
+                                placeholder="Any specific requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-block">Confirm Booking</button>
+                    </form>
+                    <div id="booking-confirmation" style="display: none; text-align: center;">
+                        <i class="fas fa-check-circle"
+                            style="font-size: 4rem; color: var(--accent-color); margin-bottom: 20px;"></i>
+                        <h3>Booking Confirmed!</h3>
+                        <p>Thank you, <span id="patient-name-display"></span>. Your appointment has been scheduled.</p>
+                        <p>We will contact you shortly for confirmation.</p>
+                        <button class="btn" onclick="location.reload()" style="margin-top: 20px;">Book Another</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">Sagarmatha<span>Diagnostics</span></div>
+                    <p>Providing accurate diagnostic services with state-of-the-art technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="booking.html">Book Appointment</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Bharatpur 7, Chitwan</li>
+                        <li><i class="fas fa-phone"></i> 056-535550, 9767219822, 9844454846</li>
+                        <li><i class="fas fa-envelope"></i> Sdclab2024@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://wa.me/9779767219822" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/18CgiUwKW3/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Sagarmatha Diagnostics Centre. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

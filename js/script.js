@@ -89,8 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     submitBtn.innerText = originalText;
                 }
             } catch (error) {
-                console.error(error);
-                alert('Network error. Please check your connection.');
+                console.error('Network or Parsing Error:', error);
+                alert('Network error. The server might be busy or unreachable. Please check your internet and try again.');
                 submitBtn.disabled = false;
                 submitBtn.innerText = originalText;
             }

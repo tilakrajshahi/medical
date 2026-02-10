@@ -58,28 +58,40 @@ async function sendEmail({ to, subject, text, attachments = [] }) {
 
 // 1. Submit Booking
 router.post('/book', (req, res) => {
-    const { name, email, phone, text, date } = req.body;
+    console.log(`[${new Date().toISOString()}] Booking request received:`, req.body);
+    const { name, phone, text, date } = req.body;
+
+    if (!name || !phone) {
+        console.error('Missing name or phone in booking request');
+        return res.status(400).json({ error: "Name and Phone are required." });
+    }
 
     // Insert into DB
     const sql = `INSERT INTO bookings (name, phone, test, date) VALUES (?, ?, ?, ?)`;
     const params = [name, phone, text || 'General Inquiry', date || new Date().toISOString().split('T')[0]];
 
+    console.log('Inserting booking into database...');
     db.run(sql, params, function (err) {
         if (err) {
-            console.error(err.message);
-            res.status(500).json({ error: err.message });
+            console.error('Database Error:', err.message);
+            res.status(500).json({ error: "Internal Server Error during booking." });
             return;
         }
 
-        // Notify Admin (Receive at your Gmail)
+        console.log(`Booking saved successfully. ID: ${this.lastID}`);
+
+        // Notify Admin (Background - don't wait)
         if (MY_EMAIL.includes('@')) {
-            sendEmail({
-                to: MY_EMAIL, // Send to yourself
-                subject: "New Test Booking Received",
-                text: `New booking from ${name}.\nPhone: ${phone}\nTest: ${text}\nDate: ${date}`
-            }).catch(console.error);
-        } else {
-            console.log("Email skipped: Password not set.");
+            console.log('Initiating background email notification...');
+            setImmediate(() => {
+                sendEmail({
+                    to: MY_EMAIL,
+                    subject: "New Test Booking Received",
+                    text: `New booking from ${name}.\nPhone: ${phone}\nTest: ${text}\nDate: ${date}`
+                }).catch(err => {
+                    console.error("Background Email Error (Safe to ignore for booking success):", err.message);
+                });
+            });
         }
 
         res.json({

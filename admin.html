@@ -177,6 +177,9 @@
 
     <!-- Custom JS -->
     <script>
+        // Backend API URL (Change this to your live server URL after deployment)
+        const BASE_URL = ''; // Leave empty for local development
+
         // Load Bookings on Page Load
         document.addEventListener('DOMContentLoaded', () => {
             loadBookings();
@@ -195,7 +198,7 @@
             }
 
             try {
-                const response = await fetch('/api/bookings');
+                const response = await fetch(`${BASE_URL}/api/bookings`);
                 const result = await response.json();
 
                 if (result.data) {
@@ -274,7 +277,7 @@
             const formData = new FormData(this);
 
             try {
-                const response = await fetch('/api/upload-report', {
+                const response = await fetch(`${BASE_URL}/api/upload-report`, {
                     method: 'POST',
                     body: formData
                 });

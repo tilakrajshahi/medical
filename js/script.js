@@ -1,3 +1,6 @@
+// Backend API URL (Change this to your live server URL after deployment)
+const BASE_URL = ''; // Leave empty for local development, e.g., 'https://medical-server.onrender.com'
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
@@ -61,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerText = 'Processing...';
 
             try {
-                const response = await fetch('/api/book', {
+                const response = await fetch(`${BASE_URL}/api/book`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -112,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerText = 'Searching...';
 
             try {
-                const response = await fetch(`/api/report/${patientId}`);
+                const response = await fetch(`${BASE_URL}/api/report/${patientId}`);
 
                 if (response.ok) {
                     const data = await response.json();

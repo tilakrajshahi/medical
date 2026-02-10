@@ -2,6 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
+const fs = require('fs');
+
+// Ensure uploads directory exists at startup
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+    console.log('Created uploads directory');
+}
+
 const apiRoutes = require('./routes/api');
 
 const app = express();

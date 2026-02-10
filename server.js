@@ -16,6 +16,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+// Health Check
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+});
+
+// Root Route (Explicit)
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // API Routes
 app.use('/api', apiRoutes);
 
@@ -23,6 +33,6 @@ app.use('/api', apiRoutes);
 require('./database');
 
 // Start Server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
 });
